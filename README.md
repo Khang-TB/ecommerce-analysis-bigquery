@@ -1,56 +1,58 @@
-# AdventureWorks Retail Performance Analysis with BigQuery
+# E-commerce User Behavior Query Project (BigQuery)
 
-This project queries key retail business metrics from the [AdventureWorks](https://learn.microsoft.com/en-us/sql/samples/adventureworks-install-configure) dataset using advanced SQL techniques on **Google BigQuery**.
+This project includes a set of structured SQL queries developed in **Google BigQuery** to extract behavioral and performance metrics from the `google_analytics_sample` dataset.
+
+The queries are designed as modular building blocks to support BI reporting on session engagement, traffic source effectiveness, and conversion funnel steps.
 
 ---
 
 ## Objective
 
-- Write reusable SQL queries that serve as building blocks for business reporting
-- Transform raw transactional data into metric-focused summaries as requested by business stakeholders
-- Demonstrate practical SQL techniques used in real business contexts
+- Develop reusable SQL queries to support e-commerce performance monitoring
+- Retrieve session-level behavioral data and user actions across the conversion funnel
+- Provide clean query logic for integration into dashboards or marketing analytics workflows
 
 ---
 
 ## 🛠 Tools & Techniques
 
-- **BigQuery SQL**: CTEs, window functions (`LAG`, `RANK`, `DENSE_RANK`), date functions, aggregations, joins
-- **Dataset**: `adventureworks2019` (Sales, Production, Purchasing)
-- Time-based aggregation (monthly/yearly)
-- Ranking and performance comparison
-- Cohort logic based on first occurrence
+- **BigQuery SQL**: CTEs, `UNNEST`, conditional logic, date formatting, aggregations  
+- **Dataset**: `bigquery-public-data.google_analytics_sample`  
+- **Focus Areas**:
+  - Traffic attribution
+  - Session engagement
+  - Funnel stage breakdown (view → add to cart → purchase)
 
 ---
 
-## Metrics Analyzed
+## Metrics Focused
 
-| Query No. | Focus Area           | Description                                                                 |
-|-----------|----------------------|-----------------------------------------------------------------------------|
-| 1         | Subcategory Sales     | Quantity, revenue, and orders over the last 12 months                      |
-| 2         | YoY Growth            | Top 3 subcategories with highest year-over-year growth                     |
-| 3         | Territory Ranking     | Top 3 territories by order volume per year                                 |
-| 4         | Promotion Impact      | Total discount costs from seasonal promotions                              |
-| 5         | Customer Retention    | Cohort analysis of repeat customers in 2014 (successfully shipped orders)  |
-| 6         | Inventory Trends      | Monthly stock levels and MoM % changes for products in 2011               |
-| 7         | Stock-to-Sales        | Monthly stock/sales ratio per product in 2011                              |
-| 8         | Pending Orders        | Count and value of orders with pending status in 2014                      |
+| Query No. | Focus Area                      | Description                                                                 |
+|-----------|----------------------------------|-----------------------------------------------------------------------------|
+| 01        | Monthly Session Summary         | Visits, pageviews, and transactions in Jan–Mar 2017                         |
+| 02        | Bounce Rate by Source           | Bounce rate per traffic source in July 2017                                |
+| 03        | Revenue by Source (Time-Based)  | Revenue per source by week and by month in June 2017                       |
+| 04        | Pageviews by User Type          | Avg. pageviews for purchasers vs non-purchasers in Jun–Jul 2017            |
+| 05        | Transactions per Purchasing User| Avg. transactions per purchaser in July 2017                               |
+| 06        | Revenue per Session             | Avg. amount spent per session (purchasers only) in July 2017               |
+| 07        | Product Affinity                | Products commonly purchased with "YouTube Men's Vintage Henley"            |
+| 08        | Funnel Conversion Cohort        | Monthly funnel map: product view → add to cart → purchase (Jan–Mar 2017)   |
 
 ---
 
 ## How to Use
 
-1. Open `adventureworks_business_metrics.sql` in Google BigQuery.
-2. Run each query section independently or adapt to your reporting needs. The dataset is public on BigQuery.
+1. Open the file `ecommerce_user_behavior_bigquery.sql` in Google BigQuery.  
+2. Run each query independently depending on the metric of interest. The dataset is publicly available via Google Cloud (`bigquery-public-data`).
+3. You can adapt queries for other months, traffic segments, or KPIs as needed.
+
+> Note: This project focused on logic and metric extraction only. This is not a full analysis.
 
 ---
 
-**Note**: These queries are not full analyses, but serve as **modular building blocks** for BI reports or further statistical interpretation.
-
----
-
-## Contact
+## Author
 
 **Trương Bảo Khang**  
 Email: truongbaokhang.work@gmail.com  
-University: Foreign Trade University
+University: Foreign Trade University  
 Major: International Economics
