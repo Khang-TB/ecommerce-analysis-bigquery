@@ -6,7 +6,7 @@ The queries are designed as modular building blocks to support BI reporting on s
 
 ---
 
-## Objective
+## 🎯 Objective
 
 - Develop reusable SQL queries to support e-commerce performance monitoring
 - Retrieve session-level behavioral data and user actions across the conversion funnel
@@ -25,7 +25,7 @@ The queries are designed as modular building blocks to support BI reporting on s
 
 ---
 
-## Metrics Focused
+## 📊 Metrics Analyzed
 
 | Query No. | Focus Area                      | Description                                                                 |
 |-----------|----------------------------------|-----------------------------------------------------------------------------|
@@ -40,7 +40,7 @@ The queries are designed as modular building blocks to support BI reporting on s
 
 ---
 
-## How to Use
+## ▶️ How to Use
 
 1. Open the file `ecommerce_user_behavior_bigquery.sql` in Google BigQuery.  
 2. Run each query independently depending on the metric of interest. The dataset is publicly available via Google Cloud (`bigquery-public-data`).
@@ -50,7 +50,7 @@ The queries are designed as modular building blocks to support BI reporting on s
 
 ---
 
-## Author
+## 👤 Author
 
 **Trương Bảo Khang**  
 Email: truongbaokhang.work@gmail.com  
