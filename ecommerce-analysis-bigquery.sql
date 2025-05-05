@@ -21,7 +21,7 @@ FROM `bigquery-public-data.google_analytics_sample.ga_sessions_201707*`
 GROUP BY trafficSource.source
 ORDER BY total_visit DESC;
 
--- Query 3: Revenue by traffic source by week, by month in June 2017
+-- Query 03: Revenue by traffic source by week, by month in June 2017
 WITH exploding AS(
   SELECT
     'Month' AS time_type,
@@ -52,7 +52,6 @@ GROUP BY time_type, time, source
 ORDER BY SOURCE, time_type,time ASC;
 
 -- Query 04: Average number of pageviews by purchaser type (purchasers vs non-purchasers) in June, July 2017.
---- Kết quả khác
 WITH purchasers AS(
   SELECT DISTINCT
     FORMAT_DATE('%Y%m', PARSE_DATE('%Y%m%d',date)) AS month,
@@ -155,7 +154,7 @@ WHERE productQuantity IS NOT NULL
 GROUP BY product.v2ProductName
 ORDER BY quantity DESC;
 
--- Query 08: Calculate cohort map from product view to addtocart to purchase in Jan, Feb and March 2017. For example, 100% product view then 40% add_to_cart and 10% purchase.
+-- Query 08: Calculate cohort map from product view to addtocart to purchase in Jan, Feb and March 2017.
 WITH product_view AS(
   SELECT 
     FORMAT_DATE('%Y%m', PARSE_DATE('%Y%m%d',date)) AS month,
